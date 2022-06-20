@@ -1,0 +1,9 @@
+# Ignore files with no extension
+*
+!*.*
+
+# Ignore directories
+*.dSym
+.vscode
+.git
+.DS_Store
