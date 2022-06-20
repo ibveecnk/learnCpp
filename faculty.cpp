@@ -17,8 +17,9 @@ int factorial(int n)
 
 int main()
 {
-    printf("Enter an integer to calculate the faculty of: ");
     int n;
+    printf("Enter an integer to calculate the faculty of:\n");
+    printf("n = ");
     cin >> n;
     printf("The faculty of %d is %d\n", n, factorial(n));
     return 1;
