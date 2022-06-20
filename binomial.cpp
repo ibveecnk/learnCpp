@@ -31,12 +31,17 @@ int binomial_iter(int n, int k)
 int main()
 {
     int n, k;
+
     printf("Enter two integers to calculate the binomial coefficient of:\n");
+
     printf("n = ");
     cin >> n;
+
     printf("k = ");
     cin >> k;
+
     printf("Recursive: %d over %d is %d\n", n, k, binomial(n, k));
     printf("Iterative: %d over %d is %d\n", n, k, binomial_iter(n, k));
+
     return 1;
 }

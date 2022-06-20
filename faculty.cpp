@@ -31,9 +31,12 @@ int main()
 {
     int n;
     printf("Enter an integer to calculate the faculty of:\n");
+
     printf("n = ");
     cin >> n;
+
     printf("Recursive: The faculty of %d is %d\n", n, factorial(n));
     printf("Iterative: The faculty of %d is %d\n", n, factorial_iter(n));
+
     return 1;
 }
