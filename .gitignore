@@ -2,6 +2,13 @@
 *
 !*.*
 
+# Ignore binary files
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+
 # Ignore directories
 *.dSym
 .vscode
