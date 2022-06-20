@@ -3,6 +3,7 @@
 
 using namespace std;
 
+// Recursively calculate the factorial of n
 int factorial(int n)
 {
     if (n == 1)
@@ -15,12 +16,24 @@ int factorial(int n)
     }
 }
 
+// Iteratively calculate the factorial of n
+int factorial_iter(int n)
+{
+    int result = 1;
+    for (int i = 2; i <= n; i++)
+    {
+        result *= i;
+    }
+    return result;
+}
+
 int main()
 {
     int n;
     printf("Enter an integer to calculate the faculty of:\n");
     printf("n = ");
     cin >> n;
-    printf("The faculty of %d is %d\n", n, factorial(n));
+    printf("Recursive: The faculty of %d is %d\n", n, factorial(n));
+    printf("Iterative: The faculty of %d is %d\n", n, factorial_iter(n));
     return 1;
 }
