@@ -4,9 +4,9 @@ This is a repo dedicated to learning fundamentals of c++.
 
 ## Notes
 
-MacOS (M1)
+### Compiling
 
-Compiling c++ code via cc and gcc often results in linker errors. A workaround I found is to use the g++ compiler.
+Compiling c++ code via cc and gcc often results in linker errors. A workaround I found is to use the g++ compiler, which automatically links most of the essential libraries.
 
 ```
 $ g++ [file to compile]
