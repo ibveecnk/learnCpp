@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <iostream>
+#include <chrono>
 
 using namespace std;
 
 // Recursively calculate n over k
-int binomial(int n, int k)
+long long binomial(int n, int k)
 {
     if (k == 0 || k == n)
     {
@@ -17,7 +18,7 @@ int binomial(int n, int k)
 }
 
 // Iteratively calculate n over k
-int binomial_iter(int n, int k)
+long long binomial_iter(int n, int k)
 {
     int result = 1;
     for (int i = 1; i <= k; i++)
@@ -30,7 +31,13 @@ int binomial_iter(int n, int k)
 
 int main()
 {
+    typedef std::chrono::high_resolution_clock Clock;
+
+    // Variable declaration
     int n, k;
+    long long res;
+    std::chrono::high_resolution_clock::time_point t1, t2;
+    std::chrono::duration<double> duration;
 
     printf("Enter two integers to calculate the binomial coefficient of:\n");
 
@@ -40,8 +47,17 @@ int main()
     printf("k = ");
     cin >> k;
 
-    printf("Recursive: %d over %d is %d\n", n, k, binomial(n, k));
-    printf("Iterative: %d over %d is %d\n", n, k, binomial_iter(n, k));
+    t1 = Clock::now();
+    res = binomial_iter(n, k);
+    t2 = Clock::now();
+    duration = t2 - t1;
+    cout << "Iterative: " << n << " over " << k << " is " << res << " (took " << duration.count() << "s)" << endl;
+
+    t1 = Clock::now();
+    res = binomial(n, k);
+    t2 = Clock::now();
+    duration = t2 - t1;
+    cout << "Recursive: " << n << " over " << k << " is " << res << " (took " << duration.count() << "s)" << endl;
 
     return 1;
 }
