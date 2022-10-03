@@ -7,6 +7,11 @@ using namespace std;
 // Recursively calculate n over k
 long long binomial(int n, int k)
 {
+    if(n < k) 
+    {
+      return -1;
+    }
+
     if (k == 0 || k == n)
     {
         return 1;
@@ -20,7 +25,11 @@ long long binomial(int n, int k)
 // Iteratively calculate n over k
 long long binomial_iter(int n, int k)
 {
-    int result = 1;
+    if(n < k) {
+      return -1;
+    }
+
+    long long result = 1;
     for (int i = 1; i <= k; i++)
     {
         result *= n - i + 1;
@@ -32,12 +41,13 @@ long long binomial_iter(int n, int k)
 int main()
 {
     typedef std::chrono::high_resolution_clock Clock;
+    typedef std::chrono::duration<double> Duration;
 
     // Variable declaration
     int n, k;
     long long res;
-    std::chrono::high_resolution_clock::time_point t1, t2;
-    std::chrono::duration<double> duration;
+    Clock::time_point t1, t2;
+    Duration duration;
 
     printf("Enter two integers to calculate the binomial coefficient of:\n");
 
